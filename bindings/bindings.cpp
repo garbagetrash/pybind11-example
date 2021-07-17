@@ -10,5 +10,8 @@ PYBIND11_MODULE(pylib, m) {
   m.doc() = "Example python bindings for a C++ library";
 
   m.def("mean", &lib::mean, "Calculate the mean of an array of values");
-  m.def("summer", [](const std::vector<double> &v) {return std::accumulate(v.begin(), v.end(), 0);});
+
+  m.def("iter_sum", [](std::vector<double> &v) {
+        return lib::iter_sum(v.begin(), v.end());
+      }, "Takes iterators, returns sum of elements between them");
 }

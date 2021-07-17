@@ -12,4 +12,5 @@ namespace lib {
     std::cout << sum / v.size() << std::endl;
     return sum / v.size();
   }
+
 }
