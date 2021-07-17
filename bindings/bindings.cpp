@@ -12,6 +12,7 @@ PYBIND11_MODULE(pylib, m) {
   m.def("mean", &lib::mean, "Calculate the mean of an array of values");
 
   m.def("iter_sum", [](std::vector<double> &v) {
-        return lib::iter_sum(v.begin(), v.end());
+        double result = lib::iter_sum(v.begin(), v.end());
+        return result;
       }, "Takes iterators, returns sum of elements between them");
 }

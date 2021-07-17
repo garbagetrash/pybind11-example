@@ -5,8 +5,8 @@
 namespace lib {
   double mean(const std::vector<double> &v);
 
-  double iter_sum(typename std::vector<double>::iterator start,
-                  typename std::vector<double>::iterator stop)
+  template <typename InputIterator = std::vector<double>::iterator, typename T = double>
+  T iter_sum(InputIterator start, InputIterator stop)
   {
     return std::accumulate(start, stop, 0.0);
   }
