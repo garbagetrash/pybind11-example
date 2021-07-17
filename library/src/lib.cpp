@@ -1,6 +1,7 @@
-#include <numeric>
-#include <vector>
 #include <iostream>
+#include <numeric>
+#include <random>
+#include <vector>
 
 #include "lib.hpp"
 
@@ -13,4 +14,11 @@ namespace lib {
     return sum / v.size();
   }
 
+  BitGen::BitGen() :
+    m_gen(std::default_random_engine),
+    m_dist(std::uniform_int_distribution<char>(0, 1) {}
+
+  char BitGen::yield() {
+    return m_dist(m_gen);
+  }
 }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <random>
 #include <vector>
 
 namespace lib {
@@ -10,4 +11,14 @@ namespace lib {
   {
     return std::accumulate(start, stop, 0.0);
   }
+
+  class BitGen {
+    public:
+      BitGen();
+      char yield();
+
+    private:
+      std::default_random_engine m_gen;
+      std::uniform_int_distribution m_dist;
+  };
 }
