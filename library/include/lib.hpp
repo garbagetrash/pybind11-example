@@ -2,4 +2,6 @@
 
 #include <vector>
 
-double mean(std::vector<double> v);
+namespace lib {
+  double mean(const std::vector<double> &v);
+}
